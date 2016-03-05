@@ -1,0 +1,50 @@
+﻿<Window x:Class="AIS.View.FilingListAdminView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Daftar Berkas - Admin" Height="450" Width="535">
+    <Grid>
+        <Button Margin="440,5,12,280" Content="Logout" Cursor="Hand" Click="Logout_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock TextDecorations="Underline">
+                    <ContentPresenter />
+                    </TextBlock>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="Navy" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,27,0,0" Name="textBlockSelectFiling" Text="Klik berkas untuk melihat detail arsip" VerticalAlignment="Top" />
+        <DataGrid HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Height="328" Width="495" Name="FilingDataGrid" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Code}" Header="Kode Berkas" />
+                <DataGridTextColumn Binding="{Binding Type}" Header="Tipe Berkas" />
+                <DataGridTextColumn Binding="{Binding PIC}" Header="PIC" />
+                <DataGridTextColumn Binding="{Binding CreatedDate}" Header="Tanggal Pembuatan" />
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DataGrid ItemsSource="{Binding Path=Archives}" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Height="100" Width="470" Name="ArchiveDataGrid" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding RegistrationCode}" Header="Kode Registrasi" />
+                            <DataGridTextColumn Binding="{Binding ArchiveType}" Header="Tipe Arsip" />
+                            <DataGridTextColumn Binding="{Binding Applicant}" Header="PIC" />
+                            <DataGridTextColumn Binding="{Binding ScannedDocument}" Header="Dokumen Scan" />
+                            <DataGridTextColumn Binding="{Binding EntryDateTime}" Header="Tanggal Entry" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <Button Content="Tambah Berkas" Height="23" HorizontalAlignment="Left" Margin="12,380,0,0" Name="AddFilingBtn" VerticalAlignment="Top" Width="105" Click="AddFilingBtn_Click" />
+        <Button Content="Lihat Arsip" Height="23" HorizontalAlignment="Left" Margin="123,380,0,0" Name="SeeArchiveBtn" VerticalAlignment="Top" Width="105" Click="SeeArchiveBtn_Click" />
+    </Grid>
+</Window>

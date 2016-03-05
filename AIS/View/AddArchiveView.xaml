@@ -1,0 +1,41 @@
+﻿<Window x:Class="AIS.View.AddArchiveView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tambah Arsip" Height="300" Width="535">
+    <Grid Height="250" Width="510" >
+        <Button Margin="440,5,12,220" Content="Logout" Cursor="Hand" Click="Logout_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock TextDecorations="Underline">
+                    <ContentPresenter />
+                    </TextBlock>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="Navy" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Grid Margin="31,0,29,20" Background="White" Height="174" VerticalAlignment="Bottom">
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,20,0,0" Name="textBlockArchiveType" Text="Jenis Arsip:" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,50,0,0" Name="textBlockRegistrationCode" Text="Kode Registrasi:" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,80,0,0" Name="textBlockPIC" Text="PIC" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,107,0,0" Name="textBlockScannedDoc" Text="Dokumen Scan:" VerticalAlignment="Top" Width="110" />
+
+            <ComboBox ItemsSource="{Binding archiveTypes}" SelectedIndex="0" Height="23" HorizontalAlignment="Left" Margin="153,20,0,0" Name="comboBoxArchiveType" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="153,50,0,0" Name="textBoxRegistrationCode" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="153,80,0,0" Name="textBoxPIC" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="153,107,0,0" Name="textBoxScannedDoc" VerticalAlignment="Top" Width="222" />
+            <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="381,106,0,0" Name="browseBtn" VerticalAlignment="Top" Width="63" Click="browseBtn_Click" />
+            
+            <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="183,134,0,0" Name="SubmitBtn" VerticalAlignment="Top" Width="70" Click="SubmitBtn_Click" />
+            <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,134,90,0" Name="CancelAddFilingBtn" VerticalAlignment="Top" Width="70" Click="CancelAddArchiveBtn_Click" />
+        </Grid>
+    </Grid>
+</Window>

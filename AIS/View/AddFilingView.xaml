@@ -1,0 +1,48 @@
+﻿<Window x:Class="AIS.View.AddFilingView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tambah Berkas" Height="500" Width="535">
+    <Grid>
+        <Button Margin="440,10,12,0" Content="Logout" Cursor="Hand" VerticalAlignment="Top" Click="Logout_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock TextDecorations="Underline">
+                    <ContentPresenter />
+                    </TextBlock>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="Navy" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,27,0,0" Name="textBlockSelectArchive" Text="Pilih arsip (gunakan Ctrl untuk memilih lebih dari satu arsip)" VerticalAlignment="Top" />
+        <DataGrid HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="238" Width="495" Name="ArchiveDataGrid" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding RegistrationCode}" Header="Kode Registrasi" />
+                <DataGridTextColumn Binding="{Binding ArchiveType}" Header="Tipe Arsip" />
+                <DataGridTextColumn Binding="{Binding Applicant}" Header="PIC" />
+                <DataGridTextColumn Binding="{Binding ScannedDocument}" Header="Dokumen Scan" />
+                <DataGridTextColumn Binding="{Binding EntryDateTime}" Header="Tanggal Entry" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Margin="0,300,0,0" Background="White" Height="174" VerticalAlignment="Top">
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,20,0,0" Name="textBlockFilingType" Text="Jenis Berkas:" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,50,0,0" Name="textBlockCode" Text="Kode Berkas:" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,80,0,0" Name="textBlockPIC" Text="PIC" VerticalAlignment="Top" Width="110" />
+            
+            <ComboBox ItemsSource="{Binding filingTypes}" SelectedIndex="0" Height="23" HorizontalAlignment="Left" Margin="153,20,0,0" Name="comboBoxFilingType" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="153,50,0,0" Name="textBoxCode" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="153,80,0,0" Name="textBoxPIC" VerticalAlignment="Top" Width="222" />
+            
+            <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="178,114,0,0" Name="SubmitBtn" VerticalAlignment="Top" Width="70" Click="SubmitBtn_Click" />
+            <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,113,161,0" Name="CancelAddFilingBtn" VerticalAlignment="Top" Width="70" Click="CancelAddFilingBtn_Click" />
+        </Grid>
+    </Grid>
+</Window>
