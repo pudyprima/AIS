@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using AIS.Model;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace AIS
 {
     public static class Program
     {
-        public static List<ArchiveModel> archives = new List<ArchiveModel>();
-        public static List<FilingModel> filings = new List<FilingModel>();
+        public static ObservableCollection<ArchiveModel> archives = new ObservableCollection<ArchiveModel>();
+        public static ObservableCollection<FilingModel> filings = new ObservableCollection<FilingModel>();
         public static List<string> archiveTypes = new List<string>();
         public static List<string> filingTypes = new List<string>();
 
@@ -68,14 +70,14 @@ namespace AIS
                 EntryDateTime = new DateTime(2016, 01, 11)
             };
 
-            archives = new List<ArchiveModel>()
+            archives = new ObservableCollection<ArchiveModel>()
             {
                 archive1,
                 archive2,
                 archive3
             };
 
-            filings = new List<FilingModel>() 
+            filings = new ObservableCollection<FilingModel>() 
             {
                 new FilingModel()
                 {
@@ -112,6 +114,36 @@ namespace AIS
         public static void AddFiling(FilingModel filing)
         {
             filings.Add(filing);
+        }
+
+        public static void DeleteFiling(FilingModel filing)
+        {
+            filings.Remove(filing);
+        }
+
+        public static void DeleteArchive(ArchiveModel archive)
+        {
+            archives.Remove(archive);
+            foreach(FilingModel filing in filings)
+            {
+                filing.Archives.Remove(archive);
+            }
+        }
+
+        public static void UpdateFiling(FilingModel filing)
+        {
+            FilingModel updateFilling = filings.SingleOrDefault(x => x.Code == filing.Code);
+            updateFilling.Archives = filing.Archives;
+            updateFilling.PIC = filing.PIC;
+            updateFilling.Type = filing.Type;
+        }
+
+        public static void UpdateArchive(ArchiveModel archive)
+        {
+            ArchiveModel updateArchive = archives.SingleOrDefault(x => x.RegistrationCode == archive.RegistrationCode);
+            updateArchive.Applicant = archive.Applicant;
+            updateArchive.ArchiveType = archive.ArchiveType;
+            updateArchive.ScannedDocument = archive.ScannedDocument;
         }
     }
 }

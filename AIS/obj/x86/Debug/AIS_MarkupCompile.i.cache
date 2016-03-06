@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Self Development\Projects\AIS\AIS\obj\x86\Debug\
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\
 AIS
 none
 false
 DEBUG;TRACE
-D:\Self Development\Projects\AIS\AIS\App.xaml
+C:\Documents\GitHub\AIS\AIS\AIS\App.xaml
 7-1367866923
 
-15367105939
-12-1547151337
+151511439378
+12-1381780322
 MainWindow.xaml;View\AddArchiveView.xaml;View\AddFilingView.xaml;View\ArchiveListAdminView.xaml;View\ArchiveListUserView.xaml;View\FilingListAdminView.xaml;View\FilingListUserView.xaml;
 
 False

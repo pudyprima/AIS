@@ -34,3 +34,26 @@ D:\Self Development\Projects\AIS\AIS\obj\x86\Debug\View\AddFilingView.baml
 D:\Self Development\Projects\AIS\AIS\obj\x86\Debug\View\AddFilingView.g.cs
 D:\Self Development\Projects\AIS\AIS\obj\x86\Debug\View\FilingListUserView.baml
 D:\Self Development\Projects\AIS\AIS\obj\x86\Debug\View\FilingListUserView.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\AIS.exe
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\AIS.pdb
+C:\Documents\GitHub\AIS\AIS\AIS\bin\Debug\AIS.exe
+C:\Documents\GitHub\AIS\AIS\AIS\bin\Debug\AIS.pdb
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\MainWindow.baml
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\AddArchiveView.baml
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\AddFilingView.baml
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\ArchiveListAdminView.baml
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\ArchiveListUserView.baml
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\FilingListAdminView.baml
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\FilingListUserView.baml
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\MainWindow.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\AddArchiveView.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\AddFilingView.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\ArchiveListAdminView.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\ArchiveListUserView.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\FilingListAdminView.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\View\FilingListUserView.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\App.g.cs
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\AIS_MarkupCompile.cache
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\AIS.g.resources
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\AIS.Properties.Resources.resources
+C:\Documents\GitHub\AIS\AIS\AIS\obj\x86\Debug\AIS.csproj.GenerateResource.Cache

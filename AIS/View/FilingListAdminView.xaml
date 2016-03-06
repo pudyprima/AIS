@@ -45,6 +45,8 @@
             </DataGrid.RowDetailsTemplate>
         </DataGrid>
         <Button Content="Tambah Berkas" Height="23" HorizontalAlignment="Left" Margin="12,380,0,0" Name="AddFilingBtn" VerticalAlignment="Top" Width="105" Click="AddFilingBtn_Click" />
-        <Button Content="Lihat Arsip" Height="23" HorizontalAlignment="Left" Margin="123,380,0,0" Name="SeeArchiveBtn" VerticalAlignment="Top" Width="105" Click="SeeArchiveBtn_Click" />
+        <Button Content="Lihat Arsip" Height="23" HorizontalAlignment="Left" Margin="400,380,0,0" Name="SeeArchiveBtn" VerticalAlignment="Top" Width="105" Click="SeeArchiveBtn_Click" />
+        <Button Content="Delete Berkas" Height="23" HorizontalAlignment="Left" Margin="254,380,0,0" Name="DelArchiveBtn" VerticalAlignment="Top" Width="105" Click="DelArchiveBtn_Click" />
+        <Button Content="Update Berkas" Height="23" HorizontalAlignment="Left" Margin="133,0,0,8" Name="UpdateArchiveBtn" VerticalAlignment="Bottom" Width="105" Click="UpdateArchiveBtn_Click" />
     </Grid>
 </Window>

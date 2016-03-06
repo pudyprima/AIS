@@ -10,12 +10,33 @@ namespace AIS.View
     /// </summary>
     public partial class AddFilingView : Window
     {
+        private bool _isUpdate = false;
+
         public AddFilingView()
         {
             InitializeComponent();
 
             ArchiveDataGrid.ItemsSource = Program.archives;
             comboBoxFilingType.ItemsSource = Program.filingTypes;
+        }
+
+        public AddFilingView(FilingModel filing)
+        {
+            InitializeComponent();
+
+            ArchiveDataGrid.ItemsSource = Program.archives;
+            foreach (ArchiveModel archive in filing.Archives)
+            {
+                ArchiveDataGrid.SelectedItems.Add(archive);
+            }
+
+            comboBoxFilingType.ItemsSource = Program.filingTypes;
+            comboBoxFilingType.SelectedItem = filing.Type;
+            textBoxCode.Text = filing.Code;
+            textBoxCode.IsEnabled = false;
+            textBoxPIC.Text = filing.PIC;
+
+            _isUpdate = true;
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
@@ -46,7 +67,14 @@ namespace AIS.View
                 filing.Archives.Add(ArchiveDataGrid.SelectedItems[i] as ArchiveModel);
             }
 
-            Program.AddFiling(filing);
+            if (_isUpdate)
+            {
+                Program.UpdateFiling(filing);
+            }
+            else
+            {
+                Program.AddFiling(filing);
+            }
 
             this.GoToFilingListView();
         }

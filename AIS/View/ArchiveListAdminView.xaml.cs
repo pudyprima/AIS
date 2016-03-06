@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using AIS.Model;
 
 namespace AIS.View
 {
@@ -32,6 +33,18 @@ namespace AIS.View
         {
             FilingListAdminView filingAdminView = new FilingListAdminView();
             filingAdminView.Show();
+            this.Close();
+        }
+
+        private void DelArchiveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Program.DeleteArchive(ArchiveDataGrid.SelectedItem as ArchiveModel);
+        }
+
+        private void UpdateArchiveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddArchiveView addArchiveView = new AddArchiveView(ArchiveDataGrid.SelectedItem as ArchiveModel);
+            addArchiveView.Show();
             this.Close();
         }
     }

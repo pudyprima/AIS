@@ -20,11 +20,30 @@ namespace AIS.View
     /// </summary>
     public partial class AddArchiveView : Window
     {
+        private bool _isUpdate = false;
+        private DateTime _entryDateTime;
+
         public AddArchiveView()
         {
             InitializeComponent();
 
             comboBoxArchiveType.ItemsSource = Program.archiveTypes;
+            _entryDateTime = DateTime.Now;
+        }
+
+        public AddArchiveView(ArchiveModel archive)
+        {
+            InitializeComponent();
+
+            comboBoxArchiveType.ItemsSource = Program.archiveTypes;
+            comboBoxArchiveType.SelectedItem = archive.ArchiveType;
+            textBoxRegistrationCode.Text = archive.RegistrationCode;
+            textBoxRegistrationCode.IsEnabled = false;
+            textBoxPIC.Text = archive.Applicant;
+            textBoxScannedDoc.Text = archive.ScannedDocument;
+
+            _entryDateTime = archive.EntryDateTime;
+            _isUpdate = true;
         }
 
         private void SubmitBtn_Click(object sender, RoutedEventArgs e)
@@ -35,10 +54,17 @@ namespace AIS.View
                 RegistrationCode = textBoxRegistrationCode.Text,
                 Applicant = textBoxPIC.Text,
                 ScannedDocument = textBoxScannedDoc.Text,
-                EntryDateTime = DateTime.Now
+                EntryDateTime = _entryDateTime
             };
 
-            Program.AddArchive(archive);
+            if (_isUpdate)
+            {
+                Program.UpdateArchive(archive);
+            }
+            else 
+            {
+                Program.AddArchive(archive);
+            }
 
             this.GoToAdminView();
         }
